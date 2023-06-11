@@ -5,7 +5,7 @@ with open("README.md", "r") as file:
 
 setup(
     name="amazon-affiliate-scraper",
-    version="0.1.1",
+    version="0.1.2",
     license="MIT License",
     author="Marcuth",
     long_description=readme_content,
