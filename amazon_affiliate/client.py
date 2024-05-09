@@ -5,23 +5,21 @@ from pydantic import validate_call
 from selenium import webdriver
 from typing import Optional
 import time
-import json
 
 DEFAULT_ORIGIN_URL = "https://amazon.com.br/"
-
-driver_manager = ChromeDriverManager()
 
 class AmazonAffiliate:
     @validate_call
     def __init__(
         self,
-        cookies_file_path: str,
+        cookies: list[dict],
         origin_url: str = DEFAULT_ORIGIN_URL,
-        webdriver_file_path: Optional[str] = driver_manager.install(),
+        webdriver_file_path: Optional[str] = None,
         headless = True
     ) -> None:
-        with open(cookies_file_path, "r+") as file:
-            cookies = json.load(file)
+        if webdriver_file_path is None:
+            driver_manager = ChromeDriverManager()
+            webdriver_file_path = driver_manager.install()
 
         options = webdriver.ChromeOptions()
 

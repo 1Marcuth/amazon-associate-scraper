@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "amazon-affiliate-scraper"
+version = "0.2.1"
+description = "\"A simple library to help a developer who is affiliated with Amazon to automate the process."
+authors = ["Marcuth <example@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "amazon_affiliate" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+selenium = "^4.20.0"
+pydantic = "^2.7.1"
+webdriver-manager = "^4.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
